@@ -1,0 +1,66 @@
+@model GeradorDeSenhas.Models.PasswordGeneratorModel // Conecta o modelo à view
+
+@{
+    ViewData["Title"] = "Gerador de Senhas Seguras";
+}
+
+<div class="text-center">
+    <h1 class="display-4">@ViewData["Title"]</h1>
+    <p>Configure as opções abaixo para gerar sua senha.</p>
+</div>
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+
+        @* O formulário aponta para a ação Index do controller atual via POST. *@
+        <form asp-action="Index" method="post">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="mb-3">
+                @* asp-for lê o [DisplayName] do nosso Model. *@
+                <label asp-for="TamanhoSenha" class="form-label"></label>
+                @* asp-for define o 'type', 'id', 'name' e 'value' do input. *@
+                <input asp-for="TamanhoSenha" class="form-control" />
+                @* asp-validation-for exibe a mensagem de erro se a validação falhar. *@
+                <span asp-validation-for="TamanhoSenha" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3 form-check">
+                <input asp-for="IncluirMaiusculas" class="form-check-input" />
+                <label asp-for="IncluirMaiusculas" class="form-check-label"></label>
+            </div>
+
+            <div class="mb-3 form-check">
+                <input asp-for="IncluirMinusculas" class="form-check-input" />
+                <label asp-for="IncluirMinusculas" class="form-check-label"></label>
+            </div>
+            
+            <div class="mb-3 form-check">
+                <input asp-for="IncluirNumeros" class="form-check-input" />
+                <label asp-for="IncluirNumeros" class="form-check-label"></label>
+            </div>
+
+            <div class="mb-3 form-check">
+                <input asp-for="IncluirCaracteresEspeciais" class="form-check-input" />
+                <label asp-for="IncluirCaracteresEspeciais" class="form-check-label"></label>
+            </div>
+            
+            <div class="d-grid gap-2">
+                 <button type="submit" class="btn btn-primary btn-lg">Gerar Senha</button>
+            </div>
+        </form>
+
+        @* Isto só irá aparecer se o GerarSenha não for nula/vazia *@
+        @if (!string.IsNullOrEmpty(Model.GerarSenha))
+        {
+            <hr />
+            <h3 class="mt-4">Sua Senha Gerada:</h3>
+            <div class="input-group">
+                <input type="text" value="@Model.GerarSenha" class="form-control form-control-lg" readonly id="generatedPassword" />
+                @* Desafio extra: fazer este botão funcionar com JavaScript! *@
+                <button class="btn btn-outline-secondary">Copiar</button>
+            </div>
+        }
+    </div>
+</div>
+
