@@ -21,7 +21,7 @@ public class PasswordGeneratorModel
     [DisplayName("Incluir caracteres especiais (!@#$...)")]
     public bool IncluirCaracteresEspeciais { get; set; } = true; // Marcado como verdadeiro por padrão
 
-    
-    public string? SenhaGerada { get; set; }
+
+    public string? GerarSenha { get; set; }
 
 }
