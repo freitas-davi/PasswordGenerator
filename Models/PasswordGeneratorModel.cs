@@ -10,16 +10,18 @@ public class PasswordGeneratorModel
     public int TamanhoSenha { get; set; } = 12; // Valor padrão de 12 caracteres
 
     [DisplayName("Incluir letras maiúsculas (A-Z)")]
-    public bool IncluirMaiusculas { get; set; } = true;
+    public bool IncluirMaiusculas { get; set; } = true; // Marcado como verdadeiro por padrão
 
     [DisplayName("Incluir letras minúsculas (a-z)")]
-    public bool IncluirMinusculas { get; set; } = true;
+    public bool IncluirMinusculas { get; set; } = true; // Marcado como verdadeiro por padrão
 
     [DisplayName("Incluir números (0-9)")]
-    public bool IncluirNumeros { get; set; } = true;
+    public bool IncluirNumeros { get; set; } = true; // Marcado como verdadeiro por padrão
 
     [DisplayName("Incluir caracteres especiais (!@#$...)")]
-    public bool IncluirCaracteresEspeciais { get; set; } = true;
+    public bool IncluirCaracteresEspeciais { get; set; } = true; // Marcado como verdadeiro por padrão
+
+    
     public string? SenhaGerada { get; set; }
 
 }
