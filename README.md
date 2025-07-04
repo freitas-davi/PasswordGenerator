@@ -8,7 +8,7 @@
     * Letras Minúsculas (a-z)
     * Números (0-9)
     * Caracteres Especiais (!@$...)
-    * Exibição Instantânea: A senha gerada é exibida na mesma tela.
+* Exibição Instantânea: A senha gerada é exibida na mesma tela.
 
 ### **🛠️ Tecnologias Utilizadas**
 * Este projeto foi construído com as seguintes tecnologias:
