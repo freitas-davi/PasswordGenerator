@@ -19,6 +19,9 @@
 
     * Padrão MVC: Arquitetura base do projeto, separando dados, interface e lógica.
 
+2### Prévia da aplicação:
+![Prévia da aplicação](./images/printPasswordGener.png)
+
 
 
 
